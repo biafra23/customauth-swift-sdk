@@ -16,6 +16,8 @@ var tsSdkLogType = OSLogType.default
 
 /// Provides integration of an iOS app with Torus CustomAuth.
 open class CustomAuth {
+    var handler: ASWebAuthSession? = nil
+
     let factory: CASDKFactoryProtocol
     var torusUtils: AbstractTorusUtils
     let fetchNodeDetails: FetchNodeDetails
