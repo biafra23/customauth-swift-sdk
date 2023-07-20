@@ -71,7 +71,7 @@ extension CustomAuth {
                 handler.handle(URL(string: url)!, modalPresentationStyle: modalPresentationStyle)
             case .asWebAuthSession:
                 handler = ASWebAuthSession(redirectURL: self.subVerifierDetails.first?.redirectURL ?? "")
-                handler.handle(URL(string: url)!, modalPresentationStyle: modalPresentationStyle)
+                handler?.handle(URL(string: url)!, modalPresentationStyle: modalPresentationStyle)
             case .none:
                 os_log("Cannot access specified browser", log: getTorusLogger(log: CASDKLogger.core, type: .error), type: .error)
             }
